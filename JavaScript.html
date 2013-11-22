@@ -5,8 +5,32 @@
 <script>
   // When the page loads.
   $(function() {
-  
+	$('#set-value').bind('click', setValue);
+	$('#get-value').bind('click', getValue);
   });
+  
+  function setValue() {
+	var key = $('#store-key').val();
+	var valueBox = $('#store-key');
+	var value = valueBox.val();
+	
+	google.script.run.withSuccessHandler(function(object) {
+      valueBox.val('');
+      console.log('set the value for key ' + key + '. Try to retrieve it now.');
+    }).withFailureHandler(showError)
+      .setKey(key, value);
+  }
+  
+  function getValue() {
+	var key = $('#store-key').val();
+	var valueBox = $('#store-key');
+	
+	google.script.run.withSuccessHandler(function(value) {
+      valueBox.val(value);
+      console.log('Retrieved the value for key ' + key + ': ' + value);
+    }).withFailureHandler(showError)
+      .getKey(key);
+  }
   
   /**
    * Logs an error message and shows an alert to the user.
