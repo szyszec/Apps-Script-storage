@@ -2,4 +2,11 @@
 
 <h1>Store values</h1>
 
+<form name="storage" id="storage">
+  <input type="text" name="store-key" id="store-key" placeholder="Key" />
+  <input type="text" name="store-value" id="store-value" placeholder="Value" />
+  <button id="set-value" name="set-value">Set key-value pair</button>
+  <button id="get-value" name="get-value">Get the key value</button>
+</form>
+
 <?!= HtmlService.createHtmlOutputFromFile('JavaScript').getContent(); ?>
