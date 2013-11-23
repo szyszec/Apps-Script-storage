@@ -20,6 +20,6 @@ function setKey(key, value) {
  * Return the value of the given key.
  * Returns the value
  */
-function getKey(key, value) {
+function getKey(key) {
 	return ScriptProperties.getProperty(key);
 }

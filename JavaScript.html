@@ -11,7 +11,7 @@
   
   function setValue() {
 	var key = $('#store-key').val();
-	var valueBox = $('#store-key');
+	var valueBox = $('#store-value');
 	var value = valueBox.val();
 	
 	google.script.run.withSuccessHandler(function(object) {
@@ -23,7 +23,7 @@
   
   function getValue() {
 	var key = $('#store-key').val();
-	var valueBox = $('#store-key');
+	var valueBox = $('#store-value');
 	
 	google.script.run.withSuccessHandler(function(value) {
       valueBox.val(value);
